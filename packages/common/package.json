@@ -8,8 +8,7 @@
     "prepare": "rm -rf ./dist && tsc",
     "start": "tsc -w",
     "tsc": "tsc",
-    "test": "ts-jest",
-    "cleanbuild": "rm -r node_modules && npm install && tsc"
+    "test": "ts-jest"
   },
   "dependencies": {
     "class-validator": "^0.11.0"
