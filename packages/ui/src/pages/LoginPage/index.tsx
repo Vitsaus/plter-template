@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import { useState } from 'react';
 import { IErrorResponse, ILoginResponse } from '@vitsaus/common';
-import * as userApi from '../../api/user';
+import {login} from '@vitsaus/api-client';
 import {useHistory} from 'react-router-dom';
 
 export function LoginPage() {
@@ -45,7 +45,7 @@ export function LoginPage() {
 
                         e.preventDefault();
 
-                        const result: ILoginResponse | IErrorResponse = await userApi.login({
+                        const result: ILoginResponse | IErrorResponse = await login({
                             username,
                             password,
                         });

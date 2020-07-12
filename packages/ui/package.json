@@ -55,7 +55,8 @@
     "react-router-dom": "^5.1.2",
     "recoil": "0.0.10",
     "styled-components": "5.1.1",
-    "@vitsaus/common": "0.1.0"
+    "@vitsaus/common": "0.1.0",
+    "@vitsaus/api-client": "0.1.0"
   },
   "keywords": [],
   "author": "",

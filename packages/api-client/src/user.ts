@@ -1,8 +1,7 @@
+import {apiUrl} from './config';
 import {IErrorResponse, ILoginResponse, IShowUserResponse} from '@vitsaus/common';
 
-const apiUrl = 'http://localhost:3030'
-
-type TApiLoginRequest = {
+export type TApiLoginRequest = {
     username: string;
     password: string;
 }
@@ -24,7 +23,7 @@ export async function login(data: TApiLoginRequest): Promise<ILoginResponse | IE
 
 }
 
-type TMeRequest = {
+export type TMeRequest = {
     token: string;
 }
 

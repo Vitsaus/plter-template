@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from 'react';
-import * as userApi from '../../api/user';
+import {me} from '@vitsaus/api-client';
 import { IShowUserResponse, IErrorResponse } from '@vitsaus/common';
 import { useRecoilState } from 'recoil';
 import {tokenState, userState} from '../../states/user';
@@ -18,7 +18,7 @@ export function DashboardPage() {
 
             console.log('got token for page', token);
             
-            const result: IShowUserResponse | IErrorResponse = await userApi.me({
+            const result: IShowUserResponse | IErrorResponse = await me({
                 token: token as string
             });
 
