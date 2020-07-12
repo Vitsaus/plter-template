@@ -1,0 +1,14 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/packages/**/node_modules/*
+/node_modules/*
+/packages/**/.yarn/*
+/packages/**/lib/*
+/packages/**/.yarn.lock
+/packages/**/*.iml
+/packages/**/dist
+/packages/**/.idea
+/storybook-static
+.idea
+.DS_Store

@@ -1,0 +1,25 @@
+version: "2"
+
+services:
+
+  db:
+    image: postgres:11.5-alpine
+    networks:
+      - network
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=app
+      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=app
+    volumes:
+      - /var/lib/postgresql
+      - /var/lib/postgresql/data
+
+networks:
+  network:
+    driver: bridge
+
+volumes:
+  postgresql:
+  postgresql_data:
