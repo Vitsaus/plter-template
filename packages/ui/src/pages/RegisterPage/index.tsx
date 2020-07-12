@@ -1,11 +1,11 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import { useState } from 'react';
-import {login, TApiLoginResponse} from '@vitsaus/api-client';
+import {register, TApiRegisterResponse} from '@vitsaus/api-client';
 import {useHistory} from 'react-router-dom';
 import { Page } from '../../components/Page/Page';
 
-export function LoginPage() {
+export function RegisterPage() {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -18,7 +18,7 @@ export function LoginPage() {
     }
 
     return (
-        <Page title="Login">
+        <Page title={"Register"}>
             <form>
                 <div>
                     <div>
@@ -41,21 +41,18 @@ export function LoginPage() {
                     </div>
                 </div>
                 <div>
-                    <input type="submit" value="login" onClick={async (e) => {
+                    <input type="submit" value="register" onClick={async (e) => {
 
                         e.preventDefault();
 
-                        const result: TApiLoginResponse = await login({
+                        const result: TApiRegisterResponse = await register({
                             username,
                             password,
                         });
 
-                        console.log('got result', result);
-
                         if (result.type === 'error') {
-                            console.log('got error!');
+                            console.log('error happened!');
                         } else {
-                            console.log(result.user.username);
                             localStorage.setItem('token', result.token);
                             history.push('/dashboard');
                         }

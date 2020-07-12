@@ -3,6 +3,7 @@ import {me, TMeResponse} from '@vitsaus/api-client';
 import { useRecoilState } from 'recoil';
 import {tokenState, userState} from '../../states/user';
 import { useState } from 'react';
+import { Page } from '../../components/Page/Page';
 
 export function DashboardPage() {
     
@@ -54,9 +55,9 @@ export function DashboardPage() {
     }
 
     return (
-        <div>
+        <Page title={"Dashboard"}>
             Hello {user.username}!
-        </div>
+        </Page>
     );
 
 }

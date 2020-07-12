@@ -100,9 +100,11 @@ export class UserController  {
             const dto: CreateUserRequestDto = await UserMapper.mapRequestToCreateUserDto(req);
 
             const user: UserDto = await this.userService.register(dto);
+            const token: string = await this.userService.createToken(user);
 
             return res.status(200).json({
                 type: 'result',
+                token,
                 user
             });
 

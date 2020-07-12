@@ -1,5 +1,29 @@
 import {apiUrl} from './config';
-import {IErrorResponse, ILoginResponse, IShowUserResponse} from '@vitsaus/common';
+import {IErrorResponse, ILoginResponse, IShowUserResponse, ICreateUserResponse} from '@vitsaus/common';
+
+export type TApiRegisterRequest = {
+    username: string;
+    password: string;
+}
+
+export type TApiRegisterResponse = ICreateUserResponse | IErrorResponse;
+
+export async function register(data: TApiRegisterRequest): Promise<TApiRegisterResponse> {
+
+    const result = await fetch(`${apiUrl}/api-users/register`, {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: data.username,
+            password: data.password,
+        }),
+    });
+
+    return await result.json();
+
+}
 
 export type TApiLoginRequest = {
     username: string;

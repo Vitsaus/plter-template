@@ -21,6 +21,7 @@ export interface ILoginResponse extends IResponseType {
 
 export interface ICreateUserResponse extends IResponseType {
     user: IUser;
+    token: string;
 }
 
 export interface IShowUserResponse extends IResponseType {

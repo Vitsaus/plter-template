@@ -1,2 +1,2 @@
-export { login, me, TApiLoginRequest, TApiLoginResponse, TMeRequest, TMeResponse } from './user';
+export { login, me, register, TApiLoginRequest, TApiLoginResponse, TMeRequest, TMeResponse, TApiRegisterRequest, TApiRegisterResponse } from './user';
 export { apiUrl, setApiUrl } from './config';
