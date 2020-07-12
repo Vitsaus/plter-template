@@ -6,7 +6,9 @@ export type TApiLoginRequest = {
     password: string;
 }
 
-export async function login(data: TApiLoginRequest): Promise<ILoginResponse | IErrorResponse> {
+export type TApiLoginResponse = ILoginResponse | IErrorResponse;
+
+export async function login(data: TApiLoginRequest): Promise<TApiLoginResponse> {
 
     const result = await fetch(`${apiUrl}/api-users/login`, {
         method: 'POST',
@@ -27,7 +29,9 @@ export type TMeRequest = {
     token: string;
 }
 
-export async function me(data: TMeRequest): Promise<IShowUserResponse | IErrorResponse> {
+export type TMeResponse = IShowUserResponse | IErrorResponse;
+
+export async function me(data: TMeRequest): Promise<TMeResponse> {
 
     const result = await fetch(`${apiUrl}/api-users/me`, {
         method: 'GET',

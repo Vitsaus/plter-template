@@ -1,8 +1,7 @@
 import React from 'react';
 import {Redirect} from 'react-router-dom';
 import { useState } from 'react';
-import { IErrorResponse, ILoginResponse } from '@vitsaus/common';
-import {login} from '@vitsaus/api-client';
+import {login, TApiLoginResponse} from '@vitsaus/api-client';
 import {useHistory} from 'react-router-dom';
 
 export function LoginPage() {
@@ -25,7 +24,7 @@ export function LoginPage() {
                         Username
                     </div>
                     <div>
-                        <input autoComplete="username" type="text" value={username} onChange={(e) => {
+                        <input type="text" autoComplete="username" value={username} onChange={(e) => {
                             setUsername(e.target.value);
                         }} />
                     </div>
@@ -45,7 +44,7 @@ export function LoginPage() {
 
                         e.preventDefault();
 
-                        const result: ILoginResponse | IErrorResponse = await login({
+                        const result: TApiLoginResponse = await login({
                             username,
                             password,
                         });
